@@ -3,14 +3,16 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { AppService } from '@application/services/app.service';
 import { DataModule } from './data.module';
+import { UsersModule } from './users.module';
 
 @Module({
   imports: [
-    DataModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: true,
     }),
+    DataModule,
+    UsersModule,
   ],
   providers: [AppService],
 })
