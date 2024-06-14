@@ -6,8 +6,11 @@ export class User {
   id: string;
 
   @Field(() => String)
-  name: string;
+  firstName: string;
 
   @Field(() => String)
-  email: string;
+  password: string;
+
+  @Field(() => String)
+  taxId: string;
 }
