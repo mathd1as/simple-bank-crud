@@ -4,14 +4,10 @@ import { CreateUserInput } from '@application/dto/create-user.input';
 import { PrismaService } from '@infra/data/client/prisma.service';
 import * as bcrypt from 'bcrypt';
 // import { AuthenticateInput } from '@application/dto/authenticate.input';
-import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class UsersService {
-  constructor(
-    private readonly prismaService: PrismaService,
-    private jwtService: JwtService,
-  ) {}
+  constructor(private readonly prismaService: PrismaService) {}
 
   async create(createUserInput: CreateUserInput) {
     const saltRounds = 10;

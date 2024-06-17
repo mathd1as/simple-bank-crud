@@ -10,6 +10,7 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
   }
 
   async validate(taxId: string, password: string): Promise<any> {
+    console.log('here');
     const authenticateInput = {
       taxId,
       password,
