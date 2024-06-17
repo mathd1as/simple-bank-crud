@@ -3,7 +3,7 @@ import { CreateUserInput } from '@application/dto/create-user.input';
 // import { UpdateUserInput } from '@application/dto/update-user.input';
 import { PrismaService } from '@infra/data/client/prisma.service';
 import * as bcrypt from 'bcrypt';
-import { AuthenticateInput } from '@application/dto/authenticate.input';
+// import { AuthenticateInput } from '@application/dto/authenticate.input';
 import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
@@ -43,27 +43,6 @@ export class UsersService {
       throw new Error('INTERNAL SERVER ERROR');
     }
     return { firstName: userFirstName };
-  }
-
-  async authenticate(authenticateInput: AuthenticateInput) {
-    const user = await this.prismaService.user.findFirst({
-      where: {
-        taxId: authenticateInput.taxId,
-      },
-    });
-
-    const passwordMatches = await bcrypt.compare(
-      authenticateInput.password,
-      user.password,
-    );
-
-    if (!passwordMatches) throw new Error('Senha invalida');
-
-    const payload = { username: user.firstName, sub: user.id };
-    const token = this.jwtService.sign(payload);
-
-    console.log(token);
-    return { token };
   }
 
   findAll() {

@@ -1,5 +1,5 @@
 import { UsersService } from '@application/services/users.service';
-import { jwtConstants } from '@infra/jwt/constants';
+import { jwtConstants } from '@infra/auth/constants';
 import { ApolloDriver } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';

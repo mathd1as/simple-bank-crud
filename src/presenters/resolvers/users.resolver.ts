@@ -2,8 +2,8 @@ import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 import { UsersService } from '@application/services/users.service';
 import { User } from '@domain/entities/user.entity';
 import { CreateUserInput } from '@application/dto/create-user.input';
-import { AuthenticateInput } from '@application/dto/authenticate.input';
-import { Authenticate } from '@domain/entities/authenticate.entity';
+// import { AuthenticateInput } from '@application/dto/authenticate.input';
+// import { Authenticate } from '@domain/entities/authenticate.entity';
 // import { UpdateUserInput } from '@application/dto/update-user.input';
 
 @Resolver(() => User)
@@ -15,12 +15,12 @@ export class UsersResolver {
     return this.usersService.create(createUserInput);
   }
 
-  @Mutation(() => Authenticate)
-  authenticate(
-    @Args('authenticateInput') authenticateInput: AuthenticateInput,
-  ) {
-    return this.usersService.authenticate(authenticateInput);
-  }
+  // @Mutation(() => Authenticate)
+  // authenticate(
+  //   @Args('authenticateInput') authenticateInput: AuthenticateInput,
+  // ) {
+  //   return this.usersService.authenticate(authenticateInput);
+  // }
 
   @Query(() => [User], { name: 'findAll' })
   findAll() {
