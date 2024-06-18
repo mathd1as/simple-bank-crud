@@ -3,6 +3,7 @@ import { JwtStrategy } from '@infra/auth/jwt.strategy';
 import { LocalStrategy } from '@infra/auth/local.strategy';
 import { PrismaService } from '@infra/data/client/prisma.service';
 import { Module } from '@nestjs/common';
+// import { APP_GUARD } from '@nestjs/core';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { AuthResolver } from '@resolvers//auth.resolver';
@@ -21,6 +22,10 @@ import { AuthResolver } from '@resolvers//auth.resolver';
     AuthResolver,
     LocalStrategy,
     JwtStrategy,
+    // {
+    //   provide: APP_GUARD,
+    //   useClass: LocalStrategy,
+    // },
   ],
 })
 export class AuthModule {}
