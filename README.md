@@ -1,5 +1,5 @@
 ### Simple bank CRUD
-API que simula as funcionalidades basicas de um banco.
+API que simula as funcionalidades básicas de um banco.
 
 ### Tecnologias
 * Node.js
