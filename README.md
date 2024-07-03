@@ -4,5 +4,6 @@ API que simula as funcionalidades básicas de um banco. Este CRUD foi baseado no
 ### Tecnologias
 * Node.js
 * Typescript
-* MongoDB / Mongodb atlas
+* MongoDB / Mongodb Atlas
+* Prisma
 * GraphQL
